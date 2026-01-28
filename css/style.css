@@ -43,16 +43,16 @@ body {
   width: 100%;
   padding: 16px;
   margin: 15px 0;
-  /* 使用高亮度的白，並稍微增加透明度 */
-  background: rgba(255, 255, 255, 0.5) !important; 
-  border: 1px solid rgba(255, 255, 255, 0.6) !important;
-  border-radius: 15px;
-  color: #4a4a4a; /* 確保文字是清晰的深灰色 */
+  /* 淡淡的粉藍背景 */
+  background: rgba(212, 230, 241, 0.5) !important; 
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  border-radius: 20px; /* 圓潤一點更可愛 */
+  color: #5d6d7e; /* 深灰藍文字 */
   text-decoration: none;
   font-weight: 500;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.4s ease;
 }
 
 /* 按鈕滑過效果 (Hover) */
@@ -61,14 +61,14 @@ body {
   filter: none !important;
   -webkit-filter: none !important;
   /* 2. 讓背景變成更清透的高亮度白，而不是灰 */
-  background: rgba(245, 235, 255, 0.85) !important;
+  background: rgba(252, 236, 242, 0.85) !important;
   /* 3. 讓文字保持清晰，不要變色 */
-  color: #5b6d8a !important;
+  color: #856d72 !important;
   /* 4. 增加向上漂浮的律動感 */
-  transform: translateY(-5px) !important;
+  transform: translateY(-5px) scale(1.02) !important;
   /* 5. 增加白色光暈，模擬玻璃在光線下的反射 */
-  box-shadow: 0 10px 25px rgba(210, 160, 255, 0.6), 
-              0 15px 40px rgba(255, 180, 220, 0.4) !important;
+  box-shadow: 0 10px 25px rgba(252, 182, 193, 0.6), 
+              0 15px 40px rgba(255, 255, 255, 0.5) !important;
   /* 6. 邊框亮起來 */
   border: 1px solid rgba(255, 255, 255, 1) !important;
 }
