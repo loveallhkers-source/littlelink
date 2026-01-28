@@ -32,13 +32,26 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Helvetica Neue', Arial, sans-serif;
-  /* 回歸最簡單的背景設定，移除 fixed */
-  background: url('../images/IMG_9097.PNG') no-repeat center center fixed;
-  background-size: cover;
+  background-color: #fcecfc; /* 基礎底色 */
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  /* 移除這裡的所有 background-image */
+}
+
+/* 建立獨立背景層，這是解決 Safari 不清透的關鍵 */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../images/你的檔名.png') no-repeat center center;
+  background-size: cover;
+  z-index: -1; /* 放在最底面 */
+  /* 強制 Safari 不要在這裡套用任何濾鏡 */
 }
 
 /* 1. 調整容器：去除厚重感，改為純粹的懸浮感 */
@@ -48,25 +61,25 @@ body {
   min-height: 500px;
   padding: 50px 24px;
   
-  /* 1. 核心：將白色濃度降至 0.06，這會讓背景圖幾乎原色透出 */
-  background: rgba(255, 255, 255, 0.06) !important;
+  /* 核心：降低白度到 0.03 (幾乎全透)，配合模糊 */
+  background: rgba(255, 255, 255, 0.03) !important;
   
-  /* 2. 降低模糊度：從 20px 降到 10px，增加通透感，不再像磨砂 */
-  backdrop-filter: blur(10px) !important;
-  -webkit-backdrop-filter: blur(10px) !important;
+  /* Safari 專用模糊，稍微調低一點 (12px) 增加透光度 */
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
   
-  /* 3. 強化邊框與光澤：玻璃的靈魂在於邊緣 */
+  /* 邊框增加亮度，定義玻璃感 */
   border: 1px solid rgba(255, 255, 255, 0.4) !important;
   border-radius: 40px;
   
-  /* 4. 修改陰影：去掉黑色調，改用淡紫色或淡粉色，增加清透氛圍 */
-  box-shadow: 0 20px 40px rgba(212, 230, 241, 0.2) !important;
+  /* 移除深色陰影，改用白色柔光 */
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1) !important;
   
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   
-  /* 強制 Safari 開啟硬體加速以解決不清透的問題 */
+  /* 關鍵：強制開啟 3D 渲染，解決預覽圖與實際畫面不符的問題 */
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
 }
