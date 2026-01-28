@@ -64,22 +64,25 @@ p {
   min-height: 520px;
   padding: 50px 24px;
   
-  /* 關鍵：極低濃度白 (0.02) 以確保在任何設備都不變色 */
-  background: rgba(255, 255, 255, 0.02) !important;
+  /* 1. 核心修復：徹底移除底色，設為 0 */
+  background: transparent !important; 
   
-  /* 模糊程度：15px 兼顧清透與質感 */
+  /* 2. 保持模糊：這是唯一的質感來源 */
   backdrop-filter: blur(15px) !important;
   -webkit-backdrop-filter: blur(15px) !important;
   
-  border: 1.2px solid rgba(255, 255, 255, 0.4) !important;
+  /* 3. 強化邊框：因為沒了底色，邊框要更亮一點來定義板子位置 */
+  border: 1.5px solid rgba(255, 255, 255, 0.5) !important;
   border-radius: 45px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.03) !important;
+  
+  /* 4. 移除陰影或改為極淡，避免 Safari 產生髒色 */
+  box-shadow: none !important; 
   
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   
-  /* 強制 Safari 開啟 3D 渲染，解決預覽圖不一致問題 */
+  /* 繼續保留硬體加速 */
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
 }
