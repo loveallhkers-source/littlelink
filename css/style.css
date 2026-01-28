@@ -26,17 +26,20 @@ body {
 .container {
   width: 90%;
   max-width: 400px;
-  /* 增加一點底部空間，預留給按鈕浮動，避免撐開容器 */
-  padding: 40px 20px 50px 20px; 
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  /* 設定最小高度，防止按鈕跳動時板子縮小 */
+  min-height: 450px; 
+  padding: 40px 20px;
+  /* 提升清透感：降低白度到 0.1，增加模糊度到 25px */
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(25px) !important;
+  -webkit-backdrop-filter: blur(25px) !important;
+  /* 邊框更細更淡，增加精緻度 */
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
   border-radius: 30px;
-  /* 確保高度計算包含內邊距 */
+  /* 鎖定佈局，防止內容推擠 */
+  display: flex;
+  flex-direction: column;
   box-sizing: border-box;
-  /* 鎖定寬度防止左右晃動 */
-  overflow: hidden; 
 }
 
 /* 按鈕美化 */
@@ -44,31 +47,20 @@ body {
   display: block;
   width: 100%;
   padding: 16px;
-  margin: 15px 0;
-  box-sizing: border-box; /* 確保寬度正確 */
-  
-  /* 手機優化：稍微加深藍色飽和度，避免模糊失效時變白 */
-  background: rgba(225, 240, 255, 0.4) !important; 
-  
-  border: 1.5px solid rgba(255, 255, 255, 0.6) !important;
+  margin: 12px 0;
+  background: rgba(255, 255, 255, 0.2) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
   border-radius: 20px;
   color: #5a6b7d !important;
   text-decoration: none;
   font-weight: 500;
   
-  /* 確保模糊效果在手機端盡可能運作 */
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  
-  /* 平滑動畫 */
-  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* 針對移動端的特殊修正：防止點擊時產生黑色外框 */
-@media (max-width: 768px) {
-  .button {
-    -webkit-tap-highlight-color: transparent;
-  }
+  /* 核心：將 transition 改為只針對特定屬性，避免影響佈局 */
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              background 0.3s ease, 
+              box-shadow 0.3s ease;
 }
 
 /* 按鈕滑過效果 (Hover) */
@@ -81,7 +73,7 @@ body {
   /* 3. 讓文字保持清晰，不要變色 */
   color: #856d72 !important;
   /* 4. 增加向上漂浮的律動感 */
-  transform: translateY(-5px) scale(1.02) !important;
+  transform: translateY(-4px) scale(1.03) !important;
   /* 5. 增加白色光暈，模擬玻璃在光線下的反射 */
   box-shadow: 0 10px 25px rgba(252, 182, 193, 0.6), 
               0 15px 40px rgba(255, 255, 255, 0.5) !important;
