@@ -43,24 +43,32 @@ body {
 
 /* 1. 調整容器：去除厚重感，改為純粹的懸浮感 */
 .container {
-  width: 95%; /* 手機上稍微寬一點點 */
+  width: 95%;
   max-width: 420px;
-  min-height: 500px; /* 增加高度空間 */
+  min-height: 500px;
   padding: 50px 24px;
   
-  /* 玻璃感調得更透、更亮 */
-  background: rgba(255, 255, 255, 0.15) !important;
-  backdrop-filter: blur(20px) !important;
-  -webkit-backdrop-filter: blur(20px) !important;
+  /* 1. 核心：將白色濃度降至 0.06，這會讓背景圖幾乎原色透出 */
+  background: rgba(255, 255, 255, 0.06) !important;
   
-  /* 關鍵：極細的邊框 + 柔和的大陰影 */
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
-  border-radius: 40px; /* 更圓潤的轉角 */
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05) !important;
+  /* 2. 降低模糊度：從 20px 降到 10px，增加通透感，不再像磨砂 */
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  
+  /* 3. 強化邊框與光澤：玻璃的靈魂在於邊緣 */
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  border-radius: 40px;
+  
+  /* 4. 修改陰影：去掉黑色調，改用淡紫色或淡粉色，增加清透氛圍 */
+  box-shadow: 0 20px 40px rgba(212, 230, 241, 0.2) !important;
   
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  
+  /* 強制 Safari 開啟硬體加速以解決不清透的問題 */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 /* 2. 改造按鈕：變成高挑、精緻的膠囊狀 */
