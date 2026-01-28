@@ -26,15 +26,17 @@ body {
 .container {
   width: 90%;
   max-width: 400px;
-  padding: 40px 20px;
-  /* 核心：玻璃擬態 */
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px); 
-  -webkit-backdrop-filter: blur(10px);
+  /* 增加一點底部空間，預留給按鈕浮動，避免撐開容器 */
+  padding: 40px 20px 50px 20px; 
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 30px;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
-  text-align: center;
+  /* 確保高度計算包含內邊距 */
+  box-sizing: border-box;
+  /* 鎖定寬度防止左右晃動 */
+  overflow: hidden; 
 }
 
 /* 按鈕美化 */
@@ -43,20 +45,30 @@ body {
   width: 100%;
   padding: 16px;
   margin: 15px 0;
-  /* 關鍵：使用高亮度藍色，並降低不透明度 (0.3) */
-  /* rgba(235, 245, 255) 是最清透的淺天藍 */
-  background: rgba(235, 245, 255, 0.3) !important; 
-  /* 增加邊框亮度，模擬冰塊邊緣的折射 */
+  box-sizing: border-box; /* 確保寬度正確 */
+  
+  /* 手機優化：稍微加深藍色飽和度，避免模糊失效時變白 */
+  background: rgba(225, 240, 255, 0.4) !important; 
+  
   border: 1.5px solid rgba(255, 255, 255, 0.6) !important;
   border-radius: 20px;
-  /* 文字使用柔和的深冷灰色，不帶髒感 */
-  color: #5a6b7d; 
+  color: #5a6b7d !important;
   text-decoration: none;
   font-weight: 500;
-  /* 增加模糊度到 15px，讓背景圖透上來時更柔美 */
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  
+  /* 確保模糊效果在手機端盡可能運作 */
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  
+  /* 平滑動畫 */
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 針對移動端的特殊修正：防止點擊時產生黑色外框 */
+@media (max-width: 768px) {
+  .button {
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 
 /* 按鈕滑過效果 (Hover) */
