@@ -11,75 +11,49 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  /* 關鍵：加入你的背景圖 */
-  background: #fcecfc;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  /* 回歸最簡單的背景設定，移除 fixed */
+  background: url('../images/IMG_9097.PNG') no-repeat center center fixed;
+  background-size: cover;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--text-color);
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* 這裡放你的背景圖 */
-  background: url('../images/IMG_9097.PNG') no-repeat center center;
-  background-size: cover;
-  z-index: -1; /* 確保它在最底層 */
 }
 
 /* 玻璃卡片容器 */
 .container {
   width: 90%;
   max-width: 400px;
-  /* 設定最小高度，防止按鈕跳動時板子縮小 */
-  min-height: 450px; 
+  min-height: 450px;
   padding: 40px 20px;
-  /* 提升清透感：降低白度到 0.1，增加模糊度到 25px */
-  background: rgba(235, 245, 255, 0.05) !important;
-  backdrop-filter: blur(10px) !important;
-  -webkit-backdrop-filter: blur(25px) !important;
-  /* 邊框更細更淡，增加精緻度 */
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  border-radius: 30px;
-  /* 鎖定佈局，防止內容推擠 */
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-
-   /* 加入這兩行 */
-  transform: translateZ(0); 
-  -webkit-transform: translateZ(0);
   
-  /* 確保透明度夠低 */
-  background: rgba(255, 255, 255, 0.05) !important;
+  /* 關鍵修改：移除可能會在 Safari 失敗的 blur，改用極致清透的純白 */
+  /* 我們用 0.15 的白，並搭配一個「光暈邊框」來模擬質感 */
+  background: rgba(255, 255, 255, 0.15) !important;
+  
+  /* 移除這兩行，因為 Safari 渲染它們會有色差 */
+  /* backdrop-filter: blur(25px); */
+  /* -webkit-backdrop-filter: blur(25px); */
+  
+  /* 強化邊框：讓它看起來像薄冰邊緣 */
+  border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
+  border-radius: 30px;
+  
+  /* 增加一個內部的柔光感，這在所有瀏覽器都有效 */
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.2), 
+              0 15px 35px rgba(0, 0, 0, 0.05) !important;
+  
+  box-sizing: border-box;
 }
 
 /* 按鈕美化 */
 .button {
-  display: block;
-  width: 100%;
-  padding: 16px;
-  margin: 12px 0;
-  background: rgba(255, 240, 245, 0.05) !important;
-  backdrop-filter: blur(5px) !important;
-  -webkit-backdrop-filter: blur(10px) !important;
+  background: rgba(255, 255, 255, 0.2) !important;
   border: 1px solid rgba(255, 255, 255, 0.4) !important;
   border-radius: 20px;
-  color: #5a6b7d !important;
-  text-decoration: none;
-  font-weight: 500;
-  
-  /* 核心：將 transition 改為只針對特定屬性，避免影響佈局 */
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
-              background 0.3s ease, 
-              box-shadow 0.3s ease;
+  color: #4a4a4a !important;
+  transition: all 0.3s ease;
 }
 
 /* 按鈕滑過效果 (Hover) */
