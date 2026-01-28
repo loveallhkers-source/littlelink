@@ -43,16 +43,20 @@ body {
   width: 100%;
   padding: 16px;
   margin: 15px 0;
-  /* 淡淡的粉藍背景 */
-  background: rgba(212, 230, 241, 0.5) !important; 
-  border: 1px solid rgba(255, 255, 255, 0.5) !important;
-  border-radius: 20px; /* 圓潤一點更可愛 */
-  color: #5d6d7e; /* 深灰藍文字 */
+  /* 關鍵：使用高亮度藍色，並降低不透明度 (0.3) */
+  /* rgba(235, 245, 255) 是最清透的淺天藍 */
+  background: rgba(235, 245, 255, 0.3) !important; 
+  /* 增加邊框亮度，模擬冰塊邊緣的折射 */
+  border: 1.5px solid rgba(255, 255, 255, 0.6) !important;
+  border-radius: 20px;
+  /* 文字使用柔和的深冷灰色，不帶髒感 */
+  color: #5a6b7d; 
   text-decoration: none;
   font-weight: 500;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: all 0.4s ease;
+  /* 增加模糊度到 15px，讓背景圖透上來時更柔美 */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 /* 按鈕滑過效果 (Hover) */
