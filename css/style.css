@@ -61,7 +61,7 @@ body {
   filter: none !important;
   -webkit-filter: none !important;
   /* 2. 讓背景變成更清透的高亮度白，而不是灰 */
-  background: rgba(255, 255, 255, 0.85) !important;
+  background: rgba(255, 250, 255, 0.9) !important;
   /* 3. 讓文字保持清晰，不要變色 */
   color: #4a4a4a !important;
   /* 4. 增加向上漂浮的律動感 */
