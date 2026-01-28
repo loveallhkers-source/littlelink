@@ -43,23 +43,27 @@ body {
   width: 100%;
   padding: 16px;
   margin: 15px 0;
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid var(--glass-border);
+  /* 使用高亮度的白，並稍微增加透明度 */
+  background: rgba(255, 255, 255, 0.5) !important; 
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
   border-radius: 15px;
-  color: var(--text-color);
+  color: #4a4a4a; /* 確保文字是清晰的深灰色 */
   text-decoration: none;
   font-weight: 500;
-  transition: all 0.3s ease;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease-in-out;
 }
 
 /* 按鈕滑過效果 (Hover) */
 .button:hover {
-  background: rgba(255, 255, 255, 0.8);
-  transform: translateY(-1px);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  transition: all 0.4s ease;
+  /* 關鍵：將背景調到近乎純白(0.9)，這樣就不會顯得灰 */
+  background: rgba(255, 255, 255, 0.9) !important; 
+  color: #000; /* 文字變深黑色增加對比 */
+  transform: translateY(-3px) scale(1.02); /* 稍微放大一點點 */
+  /* 增加一個發光的白色光暈 */
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.4);
+  border: 1px solid #ffffff !important;
 }
 
 /* 大頭貼圓形處理 */
