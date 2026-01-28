@@ -29,9 +29,9 @@ body {
   padding: 40px 20px;
   /* 核心：玻璃擬態 */
   background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(20px); 
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 30px;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
   text-align: center;
