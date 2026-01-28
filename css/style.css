@@ -1,46 +1,29 @@
-/*  玻璃美學 2026 */
-
-h1 {
-  font-size: 26px !important; /* 調整為適中大小 */
-  font-weight: 600 !important;
-  color: #5a6b7d !important; /* 深灰藍色 */
-  letter-spacing: 2px !important; /* 拉開字距，更有設計感 */
-  margin-top: 20px !important;
-  margin-bottom: 5px !important;
-  /* 加入淡淡的 Baby Pink 發光陰影 */
-  text-shadow: 0 0 10px rgba(255, 204, 213, 0.5); 
-  text-align: center;
-}
-
-/* 如果標題下方有簡介文字 (p)，也順便美化 */
-p {
-  font-size: 14px !important;
-  color: #8e9aaf !important; /* 淺灰藍色 */
-  letter-spacing: 1px !important;
-  margin-bottom: 30px !important; /* 與按鈕保持距離 */
-}
+/* 
+   Nebula Lullaby Studio - Official Web Portal 2026
+   Style: Glassmorphism x Japanese Minimalist (Lit.link inspired)
+*/
 
 :root {
-  /* 設定品牌色彩：夢幻粉藍漸層 */
-  --bg-gradient: linear-gradient(135deg, #fcecfc 0%, #d4e6f1 100%);
-  --glass-bg: rgba(255, 255, 255, 0.4);
+  --main-purple: #4B4453;        /* 高級深沉紫色 */
+  --baby-blue: rgba(225, 240, 255, 0.4); 
+  --baby-pink: rgba(252, 236, 242, 0.9);
   --glass-border: rgba(255, 255, 255, 0.5);
-  --text-color: #4a4a4a;
 }
 
+/* 1. 基礎佈局：解決 Safari 不清透與縮動問題 */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Helvetica Neue', Arial, sans-serif;
-  background-color: #fcecfc; /* 基礎底色 */
+  background-color: #fcecfc;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* 移除這裡的所有 background-image */
+  overflow-x: hidden;
 }
 
-/* 建立獨立背景層，這是解決 Safari 不清透的關鍵 */
+/* 獨立背景層：解決 Safari fixed 背景與毛玻璃衝突 */
 body::before {
   content: "";
   position: fixed;
@@ -50,84 +33,111 @@ body::before {
   height: 100%;
   background: url('../images/IMG_9097.PNG') no-repeat center center;
   background-size: cover;
-  z-index: -1; /* 放在最底面 */
-  /* 強制 Safari 不要在這裡套用任何濾鏡 */
+  z-index: -1;
+  /* 移除所有濾鏡以保證 Safari 效能 */
 }
 
-/* 1. 調整容器：去除厚重感，改為純粹的懸浮感 */
+/* 2. 品牌標題 H1：高級深紫 + 輕微白光 */
+h1 {
+  font-size: 24px !important;
+  font-weight: 600 !important;
+  color: var(--main-purple) !important; 
+  letter-spacing: 3px !important; /* 增加呼吸感 */
+  margin-top: 25px !important;
+  margin-bottom: 8px !important;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.8); /* 淡淡的白色發光 */
+  text-align: center;
+}
+
+p {
+  font-size: 13px !important;
+  color: #6d6d6d !important;
+  letter-spacing: 1.5px !important;
+  margin-bottom: 35px !important;
+  text-align: center;
+}
+
+/* 3. 背景板：極致清透冰晶感 */
 .container {
-  width: 95%;
-  max-width: 420px;
-  min-height: 500px;
+  width: 92%;
+  max-width: 400px;
+  min-height: 520px;
   padding: 50px 24px;
   
-  /* 核心：降低白度到 0.03 (幾乎全透)，配合模糊 */
-  background: rgba(255, 255, 255, 0.03) !important;
+  /* 關鍵：極低濃度白 (0.02) 以確保在任何設備都不變色 */
+  background: rgba(255, 255, 255, 0.02) !important;
   
-  /* Safari 專用模糊，稍微調低一點 (12px) 增加透光度 */
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
+  /* 模糊程度：15px 兼顧清透與質感 */
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
   
-  /* 邊框增加亮度，定義玻璃感 */
-  border: 1px solid rgba(255, 255, 255, 0.4) !important;
-  border-radius: 40px;
-  
-  /* 移除深色陰影，改用白色柔光 */
-  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1) !important;
+  border: 1.2px solid rgba(255, 255, 255, 0.4) !important;
+  border-radius: 45px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.03) !important;
   
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   
-  /* 關鍵：強制開啟 3D 渲染，解決預覽圖與實際畫面不符的問題 */
+  /* 強制 Safari 開啟 3D 渲染，解決預覽圖不一致問題 */
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
 }
 
-/* 2. 改造按鈕：變成高挑、精緻的膠囊狀 */
+/* 4. 按鈕：日系膠囊型 Lit.link 風格 */
 .button {
   display: flex !important;
   align-items: center;
   justify-content: center;
   width: 100% !important;
   
-  /* 核心：模仿 Lit.link 的高挑感 */
-  /* 增加上下內邊距 (22px)，縮小字體 (13px) */
+  /* 高挑感：22px padding */
   padding: 22px 20px !important; 
-  margin-bottom: 20px !important; /* 拉大按鈕間的距離，增加呼吸感 */
+  margin-bottom: 22px !important; /* 加大間距，更有呼吸感 */
   
-  /* 膠囊形狀：圓角設大 */
-  border-radius: 50px !important; 
+  /* 完美膠囊圓角 */
+  border-radius: 60px !important; 
   
-  /* 字體美學：小字 + 寬間距 */
+  /* 文字置中且無底線 */
+  text-align: center !important;
+  text-decoration: none !important;
+  
+  /* 精緻字體設定 */
   font-size: 13px !important;
-  letter-spacing: 2px !important; 
+  letter-spacing: 2px !important;
   font-weight: 500 !important;
   color: #4a4a4a !important;
   
-  /* 背景與陰影 */
-  background: rgba(255, 255, 255, 0.2) !important;
-  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  /* 平時顏色：清透 Baby Blue */
+  background: var(--baby-blue) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
   
-  /* 輕微的外陰影，讓按鈕像貼在玻璃上 */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03) !important;
-  
+  /* 動態轉換過渡 */
   transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-/* 3. 反白效果：更清脆的浮起 */
+/* 5. 反白效果：夢幻 Baby Pink 浮起 */
 .button:hover {
   filter: none !important;
-  background: rgba(255, 255, 255, 0.6) !important;
-  transform: translateY(-4px) !important;
-  box-shadow: 0 10px 25px rgba(255, 182, 193, 0.3) !important; /* 帶一點粉色光暈 */
+  text-decoration: none !important;
+  
+  /* 轉換為清透 Baby Pink */
+  background: var(--baby-pink) !important;
+  color: var(--main-purple) !important; /* 反白時文字變紫色 */
+  
+  /* 向上輕微浮起與縮放 */
+  transform: translateY(-5px) scale(1.02) !important;
+  
+  /* 粉色系光暈 */
+  box-shadow: 0 12px 25px rgba(252, 182, 193, 0.4) !important;
 }
 
-/* 大頭貼圓形處理 */
+/* 大頭貼 (待以後修改) */
 .avatar {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
-  margin-bottom: 20px;
-  border: 3px solid white;
+  margin: 0 auto 20px auto;
+  border: 2px solid white;
+  display: block;
 }
