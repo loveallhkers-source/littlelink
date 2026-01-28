@@ -13,7 +13,7 @@ body {
   padding: 0;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   /* 關鍵：加入你的背景圖 */
-  background: url('https://github.com/loveallhkers-source/littlelink/blob/main/images/IMG_9097.PNG?raw=true') no-repeat center center fixed;
+  background: url('../images/IMG_9097.PNG') no-repeat center center fixed;
   background-size: cover; /* 確保圖片鋪滿全螢幕 */
   min-height: 100vh;
   display: flex;
