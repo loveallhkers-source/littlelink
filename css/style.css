@@ -69,33 +69,31 @@ body {
 
 /* 按鈕美化 */
 .button {
-  /* 核心佈局：確保按鈕是長條形且居中 */
+  display: -webkit-flex !important;
   display: flex !important;
   align-items: center;
   justify-content: center;
   width: 100% !important;
   max-width: 100%;
-  box-sizing: border-box; /* 防止邊框撐開按鈕 */
+  box-sizing: border-box;
   
-  /* 內邊距與間距 */
-  padding: 14px 20px !important;
-  margin-top: 10px !important;
-  margin-bottom: 10px !important;
+  /* 1. 調整寬度感受：增加左右與上下的內邊距 */
+  /* 18px 讓按鈕看起來更厚實，30px 確保左右空間充足 */
+  padding: 18px 30px !important; 
   
-  /* 你的玻璃美學設定 */
-   background: rgba(255, 255, 255, 0.15) !important;
+  /* 2. 調整按鈕間距：讓上下距離變大 */
+  /* 將原本的 10px 增加到 18px，讓背景星雲透出更多 */
+  margin-top: 12px !important;
+  margin-bottom: 18px !important; 
+  
+  /* 維持 14px 精緻字體與玻璃質感 */
+  font-size: 14px !important;
+  letter-spacing: 1px; /* 讓按鈕文字也稍微拉開，更高級 */
+  background: rgba(255, 255, 255, 0.15) !important;
   border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
-  border-radius: 20px !important;
-  
-  /* 文字設定 */
+  border-radius: 25px !important; /* 配合寬度，圓角也稍微調大一點 */
   color: #4a4a4a !important;
-  text-decoration: none !important;
-  font-weight: 500;
-  font-size: 14px;
-  
-  /* 動態效果 */
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  text-align: center;
 }
 
 /* 按鈕滑過效果 (Hover) */
