@@ -61,13 +61,13 @@ body {
   filter: none !important;
   -webkit-filter: none !important;
   /* 2. 讓背景變成更清透的高亮度白，而不是灰 */
-  background: rgba(255, 250, 255, 0.9) !important;
+  background: rgba(245, 235, 255, 0.85) !important;
   /* 3. 讓文字保持清晰，不要變色 */
-  color: #4a4a4a !important;
+  color: #5b6d8a !important;
   /* 4. 增加向上漂浮的律動感 */
   transform: translateY(-4px) !important;
   /* 5. 增加白色光暈，模擬玻璃在光線下的反射 */
-  box-shadow: 0 12px 24px rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 12px 24px rgba(220, 180, 255, 0.3) !important;
   /* 6. 邊框亮起來 */
   border: 1px solid rgba(255, 255, 255, 1) !important;
 }
