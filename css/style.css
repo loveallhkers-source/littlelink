@@ -49,11 +49,32 @@ body {
 
 /* 按鈕美化 */
 .button {
-  background: rgba(255, 255, 255, 0.2) !important;
-  border: 1px solid rgba(255, 255, 255, 0.4) !important;
-  border-radius: 20px;
+  /* 核心佈局：確保按鈕是長條形且居中 */
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 100% !important;
+  max-width: 100%;
+  box-sizing: border-box; /* 防止邊框撐開按鈕 */
+  
+  /* 內邊距與間距 */
+  padding: 16px 20px !important;
+  margin-bottom: 12px !important;
+  
+  /* 你的玻璃美學設定 */
+  background: rgba(255, 255, 255, 0.15) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
+  border-radius: 20px !important;
+  
+  /* 文字設定 */
   color: #4a4a4a !important;
-  transition: all 0.3s ease;
+  text-decoration: none !important;
+  font-weight: 500;
+  font-size: 16px;
+  
+  /* 動態效果 */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
 }
 
 /* 按鈕滑過效果 (Hover) */
