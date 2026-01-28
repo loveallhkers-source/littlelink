@@ -57,12 +57,27 @@ body {
 
 /* 按鈕滑過效果 (Hover) */
 .button:hover {
-  /* 關鍵：將背景調到近乎純白(0.9)，這樣就不會顯得灰 */
-  background: rgba(255, 255, 255, 0.9) !important; 
-  color: #000; /* 文字變深黑色增加對比 */
-  transform: translateY(-3px) scale(1.02); /* 稍微放大一點點 */
-  /* 增加一個發光的白色光暈 */
-  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.4);
-  border: 1px solid #ffffff !important;
+  /* 1. 關鍵：取消所有讓按鈕變暗的預設濾鏡 */
+  filter: none !important;
+  -webkit-filter: none !important;
+  /* 2. 讓背景變成更清透的高亮度白，而不是灰 */
+  background: rgba(255, 255, 255, 0.85) !important;
+  /* 3. 讓文字保持清晰，不要變色 */
+  color: #4a4a4a !important;
+  /* 4. 增加向上漂浮的律動感 */
+  transform: translateY(-4px) !important;
+  /* 5. 增加白色光暈，模擬玻璃在光線下的反射 */
+  box-shadow: 0 12px 24px rgba(255, 255, 255, 0.4) !important;
+  /* 6. 邊框亮起來 */
+  border: 1px solid rgba(255, 255, 255, 1) !important;
 }
 
+
+/* 大頭貼圓形處理 */
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 3px solid white;
+}
