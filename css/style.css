@@ -12,8 +12,9 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background: var(--bg-gradient);
-  background-attachment: fixed;
+  /* 關鍵：加入你的背景圖 */
+  background: url('../images/bg-nebula.jpg') no-repeat center center fixed;
+  background-size: cover; /* 確保圖片鋪滿全螢幕 */
   min-height: 100vh;
   display: flex;
   justify-content: center;
