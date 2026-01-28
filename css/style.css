@@ -43,14 +43,14 @@ body {
   width: 100%;
   padding: 16px;
   margin: 15px 0;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.15);
   border: 1px solid var(--glass-border);
   border-radius: 15px;
   color: var(--text-color);
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
 }
 
 /* 按鈕滑過效果 (Hover) */
