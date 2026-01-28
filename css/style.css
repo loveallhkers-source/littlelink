@@ -13,13 +13,25 @@ body {
   padding: 0;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   /* 關鍵：加入你的背景圖 */
-  background: url('../images/IMG_9097.PNG') no-repeat center center fixed;
-  background-size: cover; /* 確保圖片鋪滿全螢幕 */
+  background: #fcecfc;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   color: var(--text-color);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* 這裡放你的背景圖 */
+  background: url('../images/IMG_9097.PNG') no-repeat center center;
+  background-size: cover;
+  z-index: -1; /* 確保它在最底層 */
 }
 
 /* 玻璃卡片容器 */
@@ -40,6 +52,13 @@ body {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+
+   /* 加入這兩行 */
+  transform: translateZ(0); 
+  -webkit-transform: translateZ(0);
+  
+  /* 確保透明度夠低 */
+  background: rgba(255, 255, 255, 0.05) !important;
 }
 
 /* 按鈕美化 */
