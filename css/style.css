@@ -55,7 +55,7 @@ body {
 
 /* 按鈕滑過效果 (Hover) */
 .button:hover {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.2);
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
