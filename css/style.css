@@ -1,51 +1,44 @@
-/* 1. 背景處理：確保層級正確 */
+/* 1. 背景設定：回歸最穩定的 fixed 模式 */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Helvetica Neue', Arial, sans-serif;
-  background-color: #fcecfc;
+  background: url('../images/IMG_9097.PNG') no-repeat center center fixed;
+  background-size: cover;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: url('../images/IMG_9097.PNG') no-repeat center center;
-  background-size: cover;
-  z-index: -1;
-}
-
-/* 2. 核心：解決預覽與實體不一的背景板 */
+/* 2. 背景板：採用你之前成功的「無模糊純透視」方案 */
 .container {
   width: 92%;
   max-width: 400px;
   min-height: 520px;
   padding: 50px 24px;
   
-  /* 關鍵：Safari 縮圖與實體差異在於模糊。我們將模糊調低到 8px，並將白度降至 0.05 */
-  background: rgba(255, 255, 255, 0.05) !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
+  /* 關鍵：不使用 blur，改用極透的 0.12 白色，確保 Safari 內外一致 */
+  background: rgba(255, 255, 255, 0.12) !important;
   
-  /* 強化邊框來定義玻璃邊界，這在 Safari 顯示最穩定 */
-  border: 1.5px solid rgba(255, 255, 255, 0.5) !important;
+  /* 移除模糊，避免 Safari 產生色差 */
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  
+  /* 強化邊框與內部柔光來模擬玻璃質感 */
+  border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
   border-radius: 45px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.03) !important;
+  
+  /* 增加內部發光 (inset) 讓透明板子有厚度感 */
+  box-shadow: inset 0 0 25px rgba(255, 255, 255, 0.2), 
+              0 15px 35px rgba(0, 0, 0, 0.03) !important;
   
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  
-  /* 強制硬體加速 */
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
 }
 
-/* 3. 按鈕與標題 (維持您喜歡的設計) */
+/* 3. 標題：深紫色 + 呼吸感 */
 h1 {
   font-size: 24px !important;
   font-weight: 600 !important;
@@ -57,6 +50,15 @@ h1 {
   text-align: center;
 }
 
+p {
+  font-size: 13px !important;
+  color: #6d6d6d !important;
+  letter-spacing: 1.5px !important;
+  margin-bottom: 35px !important;
+  text-align: center;
+}
+
+/* 4. 按鈕：維持你最滿意的 Lit.link 膠囊形狀與 Baby 配色 */
 .button {
   display: flex !important;
   align-items: center;
@@ -71,16 +73,21 @@ h1 {
   letter-spacing: 2px !important;
   font-weight: 500 !important;
   color: #4a4a4a !important;
-  background: rgba(225, 240, 255, 0.4) !important; /* Baby Blue */
+  
+  /* 平時：Baby Blue */
+  background: rgba(225, 240, 255, 0.4) !important; 
   border: 1px solid rgba(255, 255, 255, 0.5) !important;
-  transition: all 0.4s ease;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
+/* 5. 反白效果：Baby Pink 浮起 */
 .button:hover {
-  background: rgba(252, 236, 242, 0.9) !important; /* Baby Pink */
+  filter: none !important;
+  text-decoration: none !important;
+  background: rgba(252, 236, 242, 0.9) !important; 
   color: #4B4453 !important;
   transform: translateY(-5px) !important;
-  box-shadow: 0 10px 20px rgba(252, 182, 193, 0.4) !important;
+  box-shadow: 0 12px 25px rgba(252, 182, 193, 0.4) !important;
 }
 
 .avatar {
