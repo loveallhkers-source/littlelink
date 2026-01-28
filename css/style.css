@@ -1,16 +1,4 @@
-/* 
-   Nebula Lullaby Studio - Official Web Portal 2026
-   Style: Glassmorphism x Japanese Minimalist (Lit.link inspired)
-*/
-
-:root {
-  --main-purple: #4B4453;        /* 高級深沉紫色 */
-  --baby-blue: rgba(225, 240, 255, 0.4); 
-  --baby-pink: rgba(252, 236, 242, 0.9);
-  --glass-border: rgba(255, 255, 255, 0.5);
-}
-
-/* 1. 基礎佈局：解決 Safari 不清透與縮動問題 */
+/* 1. 背景處理：確保層級正確 */
 body {
   margin: 0;
   padding: 0;
@@ -20,127 +8,82 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow-x: hidden;
 }
 
-/* 獨立背景層：解決 Safari fixed 背景與毛玻璃衝突 */
 body::before {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0; width: 100%; height: 100%;
   background: url('../images/IMG_9097.PNG') no-repeat center center;
   background-size: cover;
   z-index: -1;
-  /* 移除所有濾鏡以保證 Safari 效能 */
 }
 
-/* 2. 品牌標題 H1：高級深紫 + 輕微白光 */
-h1 {
-  font-size: 24px !important;
-  font-weight: 600 !important;
-  color: var(--main-purple) !important; 
-  letter-spacing: 3px !important; /* 增加呼吸感 */
-  margin-top: 25px !important;
-  margin-bottom: 8px !important;
-  text-shadow: 0 0 12px rgba(255, 255, 255, 0.8); /* 淡淡的白色發光 */
-  text-align: center;
-}
-
-p {
-  font-size: 13px !important;
-  color: #6d6d6d !important;
-  letter-spacing: 1.5px !important;
-  margin-bottom: 35px !important;
-  text-align: center;
-}
-
-/* 3. 背景板：極致清透冰晶感 */
+/* 2. 核心：解決預覽與實體不一的背景板 */
 .container {
   width: 92%;
   max-width: 400px;
   min-height: 520px;
   padding: 50px 24px;
   
-  /* 1. 核心修復：徹底移除底色，設為 0 */
-  background: transparent !important; 
+  /* 關鍵：Safari 縮圖與實體差異在於模糊。我們將模糊調低到 8px，並將白度降至 0.05 */
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
   
-  /* 2. 保持模糊：這是唯一的質感來源 */
-  backdrop-filter: blur(15px) !important;
-  -webkit-backdrop-filter: blur(15px) !important;
-  
-  /* 3. 強化邊框：因為沒了底色，邊框要更亮一點來定義板子位置 */
+  /* 強化邊框來定義玻璃邊界，這在 Safari 顯示最穩定 */
   border: 1.5px solid rgba(255, 255, 255, 0.5) !important;
   border-radius: 45px;
-  
-  /* 4. 移除陰影或改為極淡，避免 Safari 產生髒色 */
-  box-shadow: none !important; 
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.03) !important;
   
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   
-  /* 繼續保留硬體加速 */
+  /* 強制硬體加速 */
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
 }
 
-/* 4. 按鈕：日系膠囊型 Lit.link 風格 */
+/* 3. 按鈕與標題 (維持您喜歡的設計) */
+h1 {
+  font-size: 24px !important;
+  font-weight: 600 !important;
+  color: #4B4453 !important; 
+  letter-spacing: 3px !important;
+  margin-top: 25px !important;
+  margin-bottom: 8px !important;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  text-align: center;
+}
+
 .button {
   display: flex !important;
   align-items: center;
   justify-content: center;
   width: 100% !important;
-  
-  /* 高挑感：22px padding */
   padding: 22px 20px !important; 
-  margin-bottom: 22px !important; /* 加大間距，更有呼吸感 */
-  
-  /* 完美膠囊圓角 */
+  margin-bottom: 22px !important;
   border-radius: 60px !important; 
-  
-  /* 文字置中且無底線 */
   text-align: center !important;
   text-decoration: none !important;
-  
-  /* 精緻字體設定 */
   font-size: 13px !important;
   letter-spacing: 2px !important;
   font-weight: 500 !important;
   color: #4a4a4a !important;
-  
-  /* 平時顏色：清透 Baby Blue */
-  background: var(--baby-blue) !important;
+  background: rgba(225, 240, 255, 0.4) !important; /* Baby Blue */
   border: 1px solid rgba(255, 255, 255, 0.5) !important;
-  
-  /* 動態轉換過渡 */
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.4s ease;
 }
 
-/* 5. 反白效果：夢幻 Baby Pink 浮起 */
 .button:hover {
-  filter: none !important;
-  text-decoration: none !important;
-  
-  /* 轉換為清透 Baby Pink */
-  background: var(--baby-pink) !important;
-  color: var(--main-purple) !important; /* 反白時文字變紫色 */
-  
-  /* 向上輕微浮起與縮放 */
-  transform: translateY(-5px) scale(1.02) !important;
-  
-  /* 粉色系光暈 */
-  box-shadow: 0 12px 25px rgba(252, 182, 193, 0.4) !important;
+  background: rgba(252, 236, 242, 0.9) !important; /* Baby Pink */
+  color: #4B4453 !important;
+  transform: translateY(-5px) !important;
+  box-shadow: 0 10px 20px rgba(252, 182, 193, 0.4) !important;
 }
 
-/* 大頭貼 (待以後修改) */
 .avatar {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  margin: 0 auto 20px auto;
-  border: 2px solid white;
-  display: block;
+  width: 90px; height: 90px; border-radius: 50%;
+  margin: 0 auto 20px auto; border: 2px solid white; display: block;
 }
