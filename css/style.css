@@ -97,7 +97,7 @@ p {
 /* 預購表單專屬：溫柔 Baby Pink */
 .special-btn {
     /* 提高藍色飽和度 (B: 255) 與不透明度 (0.7) */
-    background: rgba(180, 225, 255, 0.7) !important; 
+    background: rgba(180, 225, 255, 0.3) !important; 
     border: 1.5px solid rgba(255, 255, 255, 0.8) !important; /* 強化白色邊框增加存在感 */
     color: #475569 !important; /* 深石板藍文字 */
 }
