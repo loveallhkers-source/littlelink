@@ -107,6 +107,41 @@ p {
     box-shadow: 0 12px 25px rgba(180, 225, 255, 0.5) !important;
 }
 
+/* 社交媒體橫排小圓區 */
+.social-icons-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* 小圓圈之間的距離 */
+    margin-bottom: 20px; /* 與下方版權字體的距離 */
+}
+
+.social-circle {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50% !important; /* 變成正圓形 */
+    background: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    color: #64748B !important; /* 跟隨你的高級灰藍色 */
+    text-decoration: none;
+    font-size: 18px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.social-circle:hover {
+    background: rgba(252, 236, 242, 0.8) !important; /* 碰觸變 Baby Pink */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(252, 182, 193, 0.3);
+}
+
+/* 確保原本的預購按鈕不受影響 */
+.special-btn {
+    /* 這裡維持你之前的設定，它會保持長條膠囊狀 */
+}
+
 /* 頁尾高級感美化 */
 .footer {
     margin-top: 30px; /* 增加間距，讓畫面底部更空靈 */
