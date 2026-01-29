@@ -112,7 +112,7 @@ p {
     display: flex;
     justify-content: center;
     gap: 15px; /* 小圓圈之間的距離 */
-    margin-bottom: 20px; /* 與下方版權字體的距離 */
+    margin-bottom: 25px; /* 與下方版權字體的距離 */
 }
 
 .social-circle {
