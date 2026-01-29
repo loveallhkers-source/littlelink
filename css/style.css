@@ -65,7 +65,7 @@ p {
   justify-content: center;
   width: 100% !important;
   padding: 22px 20px !important; 
-  margin-bottom: 22px !important;
+  margin-bottom: 30px !important;
   border-radius: 60px !important; 
   text-align: center !important;
   text-decoration: none !important;
@@ -96,24 +96,26 @@ p {
 
 /* 預購表單專屬：溫柔 Baby Pink */
 .special-btn {
-    background: rgba(252, 236, 242, 0.6) !important; /* 平時就是淡淡的粉色 */
-    border: 1.2px solid rgba(255, 192, 203, 0.4) !important;
-    color: #856d72 !important; /* 暖灰褐色文字 */
+    /* 薰衣草淡紫色 rgba(230, 230, 250) */
+    background: rgba(230, 230, 250, 0.5) !important; 
+    border: 1.2px solid rgba(200, 200, 240, 0.4) !important;
+    color: #5b5b7a !important; /* 深薰衣草灰文字 */
 }
 
 .special-btn:hover {
-    background: rgba(252, 220, 230, 0.9) !important; /* 反白時粉色變濃郁 */
-    box-shadow: 0 10px 25px rgba(252, 182, 193, 0.5) !important;
+    background: rgba(220, 220, 250, 0.8) !important; 
+    box-shadow: 0 10px 25px rgba(200, 200, 255, 0.4) !important;
 }
+
 /* 頁尾高級感美化 */
 .footer {
-    margin-top: 60px; /* 增加間距，讓畫面底部更空靈 */
+    margin-top: 50px; /* 增加間距，讓畫面底部更空靈 */
     padding-bottom: 40px;
     text-align: center;
     display: flex;
     flex-direction: column; /* 強制分行 */
     align-items: center;
-    gap: 10px; /* 控制兩行字之間的距離 */
+    gap: 2px; /* 控制兩行字之間的距離，將這個數值改小，兩行就會靠得更近 */
 }
 
 .copyright {
