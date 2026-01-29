@@ -94,3 +94,28 @@ p {
   width: 90px; height: 90px; border-radius: 50%;
   margin: 0 auto 20px auto; border: 2px solid white; display: block;
 }
+
+/* 頁尾高級感美化 */
+.footer {
+    margin-top: 40px; /* 與上方按鈕保持距離 */
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.copyright {
+    font-size: 11px !important;
+    color: #8e9aaf !important; /* 淺灰色 */
+    letter-spacing: 1px !important;
+    margin-bottom: 8px !important;
+}
+
+.privacy-link {
+    font-size: 10px !important;
+    color: #adb5bd !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease;
+}
+
+.privacy-link:hover {
+    color: #4B4453 !important; /* 滑過時變深紫色 */
+}
