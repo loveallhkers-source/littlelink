@@ -75,15 +75,17 @@ body::before {
   filter: drop-shadow(0 5px 15px rgba(255, 255, 255, 0.3));
   
   /* 6. 呼吸動畫 (選用)：讓 Logo 輕微上下漂浮 */
-  animation: float 4s ease-in-out infinite;
+  /* animation: float 4s ease-in-out infinite; */
+
+  margin-bottom: 40px !important; /* 加大間距，讓排版不擁擠 */
 }
 
 /* 漂浮動畫代碼 */
-@keyframes float {
+/* @keyframes float {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0px); }
-}
+} */
 
 /* 3. 標題：深紫色 + 呼吸感 */
 h1 {
