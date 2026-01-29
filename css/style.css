@@ -137,6 +137,19 @@ p {
     box-shadow: 0 5px 15px rgba(252, 182, 193, 0.3);
 }
 
+/* 讓小圓圈內的圖片自動置中並調整大小 */
+.social-icon-img {
+    width: 20px;  /* 調整圖標大小，18px-22px 最精緻 */
+    height: 20px;
+    object-fit: contain; /* 確保圖片不變形 */
+    /* 2026年小撇步：如果圖標太黑，可以用 filter 把它變灰藍色配合品牌 */
+    filter: opacity(0.7); 
+}
+
+.social-circle:hover .social-icon-img {
+    filter: opacity(1); /* 碰觸時圖片顏色變亮 */
+}
+
 /* 確保原本的預購按鈕不受影響 */
 .special-btn {
     /* 這裡維持你之前的設定，它會保持長條膠囊狀 */
