@@ -168,14 +168,14 @@ p {
 }
 
 .copyright {
-    margin-bottom: 0px !important;
+    margin-bottom: 1px !important;
     font-size: 11px !important;
     color: #CBD5E1 !important; /* 您選的高級灰藍 */
     letter-spacing: 1.5px !important;
 }
 
 .privacy-link {
-    margin-top: 0px !important;
+    margin-top: 1px !important;
     font-size: 10px !important;
     color: #CBD5E1 !important; /* #64748B */
     text-decoration: none !important;
