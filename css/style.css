@@ -164,16 +164,18 @@ p {
     display: flex;
     flex-direction: column; /* 強制分行 */
     align-items: center;
-    gap: 0.1px; /* 控制兩行字之間的距離，將這個數值改小，兩行就會靠得更近 */
+    gap: 0px; /* 控制兩行字之間的距離，將這個數值改小，兩行就會靠得更近 */
 }
 
 .copyright {
+    margin-bottom: 0px !important;
     font-size: 11px !important;
     color: #CBD5E1 !important; /* 您選的高級灰藍 */
     letter-spacing: 1.5px !important;
 }
 
 .privacy-link {
+    margin-top: -2px !important;
     font-size: 10px !important;
     color: #CBD5E1 !important; /* #64748B */
     text-decoration: none !important;
