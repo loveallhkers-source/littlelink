@@ -56,6 +56,35 @@ body::before {
   margin: 20px auto !important;
 }
 
+.avatar {
+  /* 1. 調整寬度，大圖示建議設在 120px - 180px 之間 */
+  width: 150px !important; 
+  height: auto !important; /* 讓高度自動比例縮放，不會變形 */
+  
+  /* 2. 移除強制圓形（如果妳的 Logo 是不規則或長方形的） */
+  border-radius: 0 !important; 
+  
+  /* 3. 移除原本的白色邊框（除非妳覺得好看） */
+  border: none !important;
+  
+  /* 4. 確保圖示居中 */
+  display: block;
+  margin: 0 auto 30px auto; 
+  
+  /* 5. 加入一點點懸浮的陰影感，呼應玻璃風格 */
+  filter: drop-shadow(0 5px 15px rgba(255, 255, 255, 0.3));
+  
+  /* 6. 呼吸動畫 (選用)：讓 Logo 輕微上下漂浮 */
+  animation: float 4s ease-in-out infinite;
+}
+
+/* 漂浮動畫代碼 */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
 /* 3. 標題：深紫色 + 呼吸感 */
 h1 {
   font-size: 24px !important;
