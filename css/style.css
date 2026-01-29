@@ -103,8 +103,8 @@ p {
 }
 
 .special-btn:hover {
-    background: rgba(150, 210, 255, 0.9) !important; 
-    box-shadow: 0 12px 25px rgba(180, 225, 255, 0.5) !important;
+    background: rgba(150, 210, 255, 0.65) !important; 
+    box-shadow: 0 12px 25px rgba(180, 225, 255, 0.3) !important;
 }
 
 /* 社交媒體橫排小圓區 */
