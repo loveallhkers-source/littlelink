@@ -175,7 +175,7 @@ p {
 
 .privacy-link {
     font-size: 10px !important;
-    color: #64748B !important;
+    color: #CBD5E1 !important; /* #64748B */
     text-decoration: none !important;
     letter-spacing: 1px;
     opacity: 0.8; /* 稍微半透明，讓它更低調 */
