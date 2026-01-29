@@ -158,8 +158,8 @@ p {
 
 /* 頁尾高級感美化 */
 .footer {
-    margin-top: 80px; /* 增加間距，讓畫面底部更空靈 */
-    padding-bottom: 20px;
+    margin-top: 50px; /* 增加間距，讓畫面底部更空靈 */
+    padding-bottom: 10px;
     text-align: center;
     display: flex;
     flex-direction: column; /* 強制分行 */
