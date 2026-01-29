@@ -96,37 +96,37 @@ p {
 
 /* 預購表單專屬：溫柔 Baby Pink */
 .special-btn {
-    /* 薰衣草淡紫色 rgba(230, 230, 250) */
-    background: rgba(230, 230, 250, 0.5) !important; 
-    border: 1.2px solid rgba(200, 200, 240, 0.4) !important;
-    color: #5b5b7a !important; /* 深薰衣草灰文字 */
+    /* 提高藍色飽和度 (B: 255) 與不透明度 (0.7) */
+    background: rgba(180, 225, 255, 0.7) !important; 
+    border: 1.5px solid rgba(255, 255, 255, 0.8) !important; /* 強化白色邊框增加存在感 */
+    color: #475569 !important; /* 深石板藍文字 */
 }
 
 .special-btn:hover {
-    background: rgba(220, 220, 250, 0.8) !important; 
-    box-shadow: 0 10px 25px rgba(200, 200, 255, 0.4) !important;
+    background: rgba(150, 210, 255, 0.9) !important; 
+    box-shadow: 0 12px 25px rgba(180, 225, 255, 0.5) !important;
 }
 
 /* 頁尾高級感美化 */
 .footer {
-    margin-top: 50px; /* 增加間距，讓畫面底部更空靈 */
-    padding-bottom: 40px;
+    margin-top: 30px; /* 增加間距，讓畫面底部更空靈 */
+    padding-bottom: 30px;
     text-align: center;
     display: flex;
     flex-direction: column; /* 強制分行 */
     align-items: center;
-    gap: 2px; /* 控制兩行字之間的距離，將這個數值改小，兩行就會靠得更近 */
+    gap: 1px; /* 控制兩行字之間的距離，將這個數值改小，兩行就會靠得更近 */
 }
 
 .copyright {
     font-size: 11px !important;
-    color: #94A3B8 !important; /* 您選的高級灰藍 */
+    color: #CBD5E1 !important; /* 您選的高級灰藍 */
     letter-spacing: 1.5px !important;
 }
 
 .privacy-link {
     font-size: 10px !important;
-    color: #CBD5E1 !important;
+    color: #64748B !important;
     text-decoration: none !important;
     letter-spacing: 1px;
     opacity: 0.8; /* 稍微半透明，讓它更低調 */
