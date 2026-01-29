@@ -104,16 +104,19 @@ p {
 
 .copyright {
     font-size: 11px !important;
-    color: #8e9aaf !important; /* 淺灰色 */
+    color: #94A3B8 !important; /* 淺灰色 */
     letter-spacing: 1px !important;
     margin-bottom: 8px !important;
+    font-weight: 400;
 }
 
 .privacy-link {
     font-size: 10px !important;
-    color: #adb5bd !important;
+    /* 連結色稍微再淡一點，營造層次感 */
+    color: #CBD5E1 !important; 
     text-decoration: none !important;
-    transition: color 0.3s ease;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
 }
 
 .privacy-link:hover {
