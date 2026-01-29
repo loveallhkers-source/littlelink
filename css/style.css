@@ -99,12 +99,12 @@ p {
     /* 提高藍色飽和度 (B: 255) 與不透明度 (0.7) */
     background: rgba(180, 225, 255, 0.3) !important; 
     border: 1.5px solid rgba(255, 255, 255, 0.8) !important; /* 強化白色邊框增加存在感 */
-    color: #e6f5ff !important; /* 深石板藍文字 */
+    color: #ccebff !important; /* 深石板藍文字 */
 }
 
 .special-btn:hover {
     background: rgba(153, 214, 255, 0.4) !important;   /* rgba(150, 210, 255, 0.65) */
-    color: #ccebff !important;
+    color: #e6f5ff !important;
     box-shadow: 0 12px 25px rgba(180, 225, 255, 0.3) !important;
 }
 
