@@ -158,7 +158,7 @@ p {
 
 /* 頁尾高級感美化 */
 .footer {
-    margin-top: 30px; /* 增加間距，讓畫面底部更空靈 */
+    margin-top: 80px; /* 增加間距，讓畫面底部更空靈 */
     padding-bottom: 20px;
     text-align: center;
     display: flex;
@@ -175,7 +175,7 @@ p {
 }
 
 .privacy-link {
-    margin-top: 2px !important;
+    margin-top: 3px !important;
     font-size: 10px !important;
     color: #CBD5E1 !important; /* #64748B */
     text-decoration: none !important;
